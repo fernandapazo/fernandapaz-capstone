@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-function SearchBar() {
+const SearchBar = () => {
   const [birds, setBirds] = useState([]);
+  const [searchQuery, setSearchQuery] = useState("");
 
   const fetchBirds = async () => {
     try {
@@ -25,16 +26,43 @@ function SearchBar() {
     fetchBirds();
   }, []);
 
+  const handleSearchInputChange = (event) => {
+    setSearchQuery(event.target.value);
+  };
+
+  const filteredBirds = birds.filter((bird) => {
+    return (
+      bird.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      bird.sciName.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      bird.region.some((region) =>
+        region.toLowerCase().includes(searchQuery.toLowerCase())
+      )
+    );
+  });
+
   return (
     <div>
       <h1>List of Birds</h1>
+      <input
+        type="text"
+        placeholder="Search by name, scientific name, or region"
+        value={searchQuery}
+        onChange={handleSearchInputChange}
+      />
       <ul>
-        {birds.map((bird) => (
-          <li key={bird.id}>{bird.name}</li>
+        {filteredBirds.map((bird) => (
+          <li key={bird.id}>
+            <h2>{bird.name}</h2>
+            <p>Scientific Name: {bird.sciName}</p>
+            <p>Region: {bird.region}</p>
+            <p>
+              Length: {bird.lengthMin} - {bird.lengthMax}
+            </p>
+          </li>
         ))}
       </ul>
     </div>
   );
-}
+};
 
 export default SearchBar;
