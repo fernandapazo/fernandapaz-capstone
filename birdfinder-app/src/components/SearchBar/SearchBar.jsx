@@ -1,33 +1,30 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 
 const SearchBar = () => {
-  const [birds, setBirds] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
+  const [birds, setBirds] = useState([]);
+  // const API_KEY = "623eb1a1-a5c4-420f-b85b-23df5c497190";
 
-  const fetchBirds = async () => {
+  const handleSearch = async () => {
     try {
       const response = await axios.get(
-        "https://nuthatch.lastelm.software/v2/birds",
+        "https://nuthatch.lastelm.software/v2/birds?pageSize=100",
         {
           headers: {
             "API-Key": "623eb1a1-a5c4-420f-b85b-23df5c497190",
           },
         }
       );
-      console.log(response.data);
       setBirds(response.data.entities);
+      console.log(response.data.entities);
     } catch (error) {
-      console.error("Error:", error);
+      console.error("Error fetching birds:", error);
     }
   };
 
-  useEffect(() => {
-    fetchBirds();
-  }, []);
-
-  const handleSearchInputChange = (event) => {
-    setSearchQuery(event.target.value);
+  const handleChange = (e) => {
+    setSearchQuery(e.target.value);
   };
 
   const filteredBirds = birds.filter((bird) => {
@@ -45,19 +42,24 @@ const SearchBar = () => {
       <h1>List of Birds</h1>
       <input
         type="text"
-        placeholder="Search by name, scientific name, or region"
+        placeholder="Search birds..."
         value={searchQuery}
-        onChange={handleSearchInputChange}
+        onChange={handleChange}
       />
+      <button onClick={handleSearch}>Search</button>
       <ul>
         {filteredBirds.map((bird) => (
           <li key={bird.id}>
-            <h2>{bird.name}</h2>
-            <p>Scientific Name: {bird.sciName}</p>
-            <p>Region: {bird.region}</p>
-            <p>
-              Length: {bird.lengthMin} - {bird.lengthMax}
-            </p>
+            <div>
+              <h2>{bird.name}</h2>
+              <p>Scientific Name: {bird.sciName}</p>
+              <p>Status: {bird.status}</p>
+              {/* <div>
+                {bird.images.map((image, index) => (
+                  <img key={index} src={image} alt={`Bird ${index + 1}`} />
+                ))}
+              </div> */}
+            </div>
           </li>
         ))}
       </ul>
