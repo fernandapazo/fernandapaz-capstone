@@ -1,15 +1,16 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
+import "./SearchBar.scss";
 
 const SearchBar = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [birds, setBirds] = useState([]);
-  // const API_KEY = "623eb1a1-a5c4-420f-b85b-23df5c497190";
 
   const handleSearch = async () => {
     try {
       const response = await axios.get(
-        "https://nuthatch.lastelm.software/v2/birds?pageSize=100",
+        "https://nuthatch.lastelm.software/v2/birds",
+
         {
           headers: {
             "API-Key": "623eb1a1-a5c4-420f-b85b-23df5c497190",
@@ -38,27 +39,46 @@ const SearchBar = () => {
   });
 
   return (
-    <div>
-      <h1>List of Birds</h1>
+    <div className="search-bar">
+      <h1 className="search-bar__title">List of Birds</h1>
       <input
         type="text"
         placeholder="Search birds..."
         value={searchQuery}
         onChange={handleChange}
+        className="search-bar__input"
       />
-      <button onClick={handleSearch}>Search</button>
-      <ul>
-        {filteredBirds.map((bird) => (
-          <li key={bird.id}>
-            <div>
-              <h2>{bird.name}</h2>
-              <p>Scientific Name: {bird.sciName}</p>
-              <p>Status: {bird.status}</p>
-              {/* <div>
-                {bird.images.map((image, index) => (
-                  <img key={index} src={image} alt={`Bird ${index + 1}`} />
+      <button onClick={() => handleSearch(1)} className="search-bar__button">
+        Search
+      </button>
+      <ul className="bird-list">
+        {filteredBirds.map((bird, index) => (
+          <li key={index} className="bird-list__item">
+            <div className="bird-info">
+              <h2 className="bird-info__name">{bird.name}</h2>
+              <p className="bird-info__sci-name">
+                Scientific Name: {bird.sciName}
+              </p>
+              <p className="bird-info__status">Status: {bird.status}</p>
+              <p className="bird-info__region">
+                Region:
+                {bird.region.map((region, index) => (
+                  <span key={index} className="bird-info__region-item">
+                    {index > 0 ? ", " : ""}
+                    {region}
+                  </span>
                 ))}
-              </div> */}
+              </p>
+              <div className="bird-info__images">
+                {bird.images.map((image, index) => (
+                  <img
+                    key={index}
+                    src={image}
+                    alt={`Bird ${index + 1}`}
+                    className="bird-info__image"
+                  />
+                ))}
+              </div>
             </div>
           </li>
         ))}

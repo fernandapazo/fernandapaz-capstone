@@ -1,0 +1,51 @@
+.search-bar {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.search-bar__input {
+}
+
+.search-bar__button {
+}
+
+.bird-list {
+}
+
+.bird-list__item {
+}
+
+.bird-info {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.bird-info__name {
+}
+
+.bird-info__sci-name {
+}
+
+.bird-info__status {
+}
+
+.bird-info__region {
+}
+
+.bird-info__region-item {
+}
+
+.bird-info__images {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.bird-info__image {
+  width: 250px;
+  height: 150px;
+}
+
+* {
+  outline: 1px solid red;
+}
