@@ -1,49 +1,110 @@
 .search-bar {
   width: 100%;
   box-sizing: border-box;
-}
+  background: #fdf3dd;
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
 
-.search-bar__input {
-}
+  &__title {
+    margin: 0px;
+    color: #ac89af;
+    font-size: 3rem;
+    margin: auto;
+    margin-bottom: 25px;
+    display: flex;
+    justify-content: center;
+  }
 
-.search-bar__button {
+  &__input-wrapper {
+    box-sizing: border-box;
+    background-color: white;
+    width: 90%;
+    border-radius: 10px;
+    height: 2.5rem;
+    padding: 0 15px;
+    box-shadow: 0px 0px 8px #d6e8f7;
+    display: flex;
+    align-items: center;
+    margin: auto;
+  }
+
+  &__input {
+    background-image: url(../../assets/search.svg);
+    background-repeat: no-repeat;
+    background-size: 25px;
+    background-position: 580px center;
+    background-color: transparent;
+    border: none;
+    height: 100%;
+    font-size: 1.25rem;
+    width: 100%;
+  }
+
+  &__button {
+    background-color: #eb6033;
+    border: none;
+    color: #eaf1f6;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    font-weight: 600;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+    width: 90%;
+
+    margin: 20px auto;
+
+    &:hover {
+      background-color: #de5020;
+      color: #eceff2;
+    }
+
+    &:active {
+      background-color: #c13e13;
+      color: #f6f4ef;
+    }
+  }
 }
 
 .bird-list {
-}
-
-.bird-list__item {
+  &__item {
+  }
 }
 
 .bird-info {
   width: 100%;
   box-sizing: border-box;
-}
 
-.bird-info__name {
-}
+  &__name {
+  }
 
-.bird-info__sci-name {
-}
+  &__sci-name {
+  }
 
-.bird-info__status {
-}
+  &__status {
+  }
 
-.bird-info__region {
-}
+  &__region {
+  }
 
-.bird-info__region-item {
-}
+  &__region-item {
+  }
 
-.bird-info__images {
-  display: flex;
-  flex-direction: row;
-  gap: 20px;
-}
+  &__images {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+  }
 
-.bird-info__image {
-  width: 250px;
-  height: 150px;
+  &__image {
+    width: 250px;
+    height: 150px;
+  }
 }
 
 * {
