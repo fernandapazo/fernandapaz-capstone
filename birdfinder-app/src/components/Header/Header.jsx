@@ -1,6 +1,6 @@
 import React from "react";
-import BirdFinderLogo from "../../assets/BirdFinder-logo.png";
-import userPic from "../../assets/use ph image copy.jpg";
+import BirdFinderLogo from "../../assets/Images/BirdFinder-logo.png";
+import userPic from "../../assets/Images/use ph image copy.jpg";
 import "./Header.scss";
 
 function Header() {
