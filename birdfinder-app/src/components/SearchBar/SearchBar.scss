@@ -3,80 +3,106 @@
 .search-bar {
   width: 100%;
   box-sizing: border-box;
-  background: #e9eadb;
+  background: url("../../assets/Images/james-wainscoat-unsplash.jpg") 0% 50% /
+    cover no-repeat;
+  height: 300px;
+  box-sizing: border-box;
   padding-top: 20px;
   display: flex;
   flex-direction: column;
 
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.509);
+    z-index: 1;
+  }
+
   &__title {
     margin: 0px;
-    color: #3f7254;
-    font-size: 2rem;
+    color: #f6b633;
+    font-size: 2.3rem;
     font-weight: 500;
-    margin: auto;
-    margin-bottom: 25px;
+    margin: 10px auto;
     display: flex;
     justify-content: center;
     font-family: "Hammersmith";
+    z-index: 2;
+  }
+
+  &__controls {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-top: 90px;
   }
 
   &__input-wrapper {
     box-sizing: border-box;
     background-color: white;
-    width: 90%;
+    width: 60%;
     border-radius: 10px;
     height: 2.5rem;
     padding: 0 15px;
     box-shadow: 0px 0px 10px #9d983b;
     display: flex;
     align-items: center;
-    margin: auto;
+    margin: 5px;
+    z-index: 2;
   }
 
   &__input {
     background-image: url(../../assets/Icons/search.svg);
     background-repeat: no-repeat;
     background-size: 25px;
-    background-position: 390px center;
+    background-position: 235px center;
     background-color: transparent;
     border: none;
     height: 100%;
     font-size: 1.25rem;
     width: 100%;
+    z-index: 2;
   }
 
   &__button {
-    background-color: #2b573d;
+    background-color: #f6b633;
     border: none;
     box-shadow: 0px 0px 10px #102017;
     color: #fff;
-    padding: 15px 32px;
+    padding: 8px 32px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-family: "Hammersmith";
     font-size: 1.5rem;
     font-weight: 500;
-    margin: 4px 2px;
     cursor: pointer;
     border-radius: 10px;
     transition: background-color 0.3s ease;
-    width: 90%;
-    margin: 20px auto;
+    width: 60%;
+    margin: 5px;
+    z-index: 2;
 
     &:hover {
-      background-color: #8b944a;
+      background-color: #d39b2d;
       color: #eceff2;
     }
 
     &:active {
-      background-color: #717939;
+      background-color: #9a701d;
       color: #f6f4ef;
     }
   }
 }
 
 .bird-list {
+  margin-top: 50px;
   &__item {
   }
 }

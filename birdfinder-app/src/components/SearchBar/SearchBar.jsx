@@ -39,18 +39,20 @@ const SearchBar = () => {
   return (
     <div className="search-bar">
       <h1 className="search-bar__title">Discover the World of Birds</h1>
-      <div className="search-bar__input-wrapper">
-        <input
-          type="text"
-          placeholder="explore birds, explore life.."
-          value={searchTerm}
-          onChange={handleInputChange}
-          className="search-bar__input"
-        />
+      <div className="search-bar__controls">
+        <div className="search-bar__input-wrapper">
+          <input
+            type="text"
+            placeholder="explore birds.."
+            value={searchTerm}
+            onChange={handleInputChange}
+            className="search-bar__input"
+          />
+        </div>
+        <button onClick={handleSearch} className="search-bar__button">
+          Search
+        </button>
       </div>
-      <button onClick={handleSearch} className="search-bar__button">
-        Search
-      </button>
       <ul className="bird-list">
         {searchResults.map((bird, index) => (
           <li key={index} className="bird-list__item">
