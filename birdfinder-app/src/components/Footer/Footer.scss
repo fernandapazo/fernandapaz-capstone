@@ -1,0 +1,67 @@
+.footer {
+  background-color: #d39b2d;
+  color: #fff;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  &__section {
+    flex: 1 1 50%;
+    margin-bottom: 20px;
+  }
+
+  &__link {
+    color: #fff;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+      color: #2b573d;
+    }
+  }
+
+  &__title {
+    font-family: "Hammersmith";
+    font-weight: 400;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #2b573d;
+  }
+
+  &__contact {
+    font-family: "Hammersmith";
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+    color: #2b573d;
+  }
+
+  &__social-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  &__social-item {
+    display: inline-block;
+    margin-right: 10px;
+  }
+
+  &__social-link {
+    color: #fff;
+    text-decoration: none;
+    width: 100px;
+    height: 100px;
+
+    &-img {
+      width: 25px;
+      height: 30px;
+
+      &:hover {
+        transition: 0.3s ease;
+        width: 35px;
+        height: 40px;
+      }
+    }
+  }
+}
