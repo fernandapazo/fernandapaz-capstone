@@ -1,8 +1,8 @@
 .header {
-  background: #925770;
+  background: #fff;
 
   &__container {
-    background: #925770;
+    background: #fff;
     display: flex;
     flex-direction: row;
   }
@@ -35,7 +35,9 @@
 
   &__nav-link {
     text-decoration: none;
-    color: #fdf3dd;
+    color: #2b573d;
+    font-family: "Hammersmith";
+    font-size: 1.3rem;
   }
 
   &__user-icon {

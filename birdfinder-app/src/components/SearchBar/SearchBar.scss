@@ -1,19 +1,23 @@
+@use "../../styles/partials/typography" as *;
+
 .search-bar {
   width: 100%;
   box-sizing: border-box;
-  background: #fdf3dd;
+  background: #e9eadb;
   padding-top: 20px;
   display: flex;
   flex-direction: column;
 
   &__title {
     margin: 0px;
-    color: #ac89af;
-    font-size: 3rem;
+    color: #3f7254;
+    font-size: 2rem;
+    font-weight: 500;
     margin: auto;
     margin-bottom: 25px;
     display: flex;
     justify-content: center;
+    font-family: "Hammersmith";
   }
 
   &__input-wrapper {
@@ -23,17 +27,17 @@
     border-radius: 10px;
     height: 2.5rem;
     padding: 0 15px;
-    box-shadow: 0px 0px 8px #d6e8f7;
+    box-shadow: 0px 0px 10px #9d983b;
     display: flex;
     align-items: center;
     margin: auto;
   }
 
   &__input {
-    background-image: url(../../assets/search.svg);
+    background-image: url(../../assets/Icons/search.svg);
     background-repeat: no-repeat;
     background-size: 25px;
-    background-position: 580px center;
+    background-position: 390px center;
     background-color: transparent;
     border: none;
     height: 100%;
@@ -42,30 +46,31 @@
   }
 
   &__button {
-    background-color: #eb6033;
+    background-color: #2b573d;
     border: none;
-    color: #eaf1f6;
+    box-shadow: 0px 0px 10px #102017;
+    color: #fff;
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 20px;
-    font-weight: 600;
+    font-family: "Hammersmith";
+    font-size: 1.5rem;
+    font-weight: 500;
     margin: 4px 2px;
     cursor: pointer;
     border-radius: 10px;
     transition: background-color 0.3s ease;
     width: 90%;
-
     margin: 20px auto;
 
     &:hover {
-      background-color: #de5020;
+      background-color: #8b944a;
       color: #eceff2;
     }
 
     &:active {
-      background-color: #c13e13;
+      background-color: #717939;
       color: #f6f4ef;
     }
   }
