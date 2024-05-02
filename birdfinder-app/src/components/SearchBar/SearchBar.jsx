@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import BirdList from "../BirdList/BirdList";
 import "./SearchBar.scss";
+import { Link } from "react-router-dom";
 
 const SearchBar = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -50,6 +51,7 @@ const SearchBar = () => {
             className="search-bar__input"
           />
         </div>
+
         <button onClick={handleSearch} className="search-bar__button">
           Search
         </button>

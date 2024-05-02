@@ -1,7 +1,7 @@
 import axios from "axios";
 import SearchBar from "../../components/SearchBar/SearchBar";
 
-function HomePage() {
+function HomePage({ searchResults }) {
   return (
     <div>
       {/* <h1>BirdFinder Home Page</h1> */}
