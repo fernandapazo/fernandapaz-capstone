@@ -1,19 +1,18 @@
 .footer {
   background-color: #d39b2d;
   color: #fff;
-  padding: 20px;
+  padding: 0 50px 5px 0px;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   position: fixed;
   bottom: 0;
   width: 100%;
-  padding: 20px;
-  height: 100px;
+  height: 80px;
 
   &__section {
     flex: 1 1 50%;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
   }
 
   &__link {
