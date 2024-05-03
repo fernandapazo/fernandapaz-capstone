@@ -3,7 +3,7 @@ import "./App.scss";
 import Header from "./components/Header/Header";
 import HomePage from "./pages/HomePage/HomePage";
 import Footer from "./components/Footer/Footer";
-import BirdDetails from "./components/BirdDetails/BirdDetails";
+import BirdDetailsPage from "./pages/BirdDetailsPage/BirdDetailsPage";
 
 function App() {
   return (
@@ -12,7 +12,7 @@ function App() {
         <Header />
         <Routes>
           <Route exact path="/" element={<HomePage />} />
-          <Route path="/bird/:id" element={<BirdDetails />} />
+          <Route path="/bird/:id" element={<BirdDetailsPage />} />
         </Routes>
         <Footer />
       </BrowserRouter>
