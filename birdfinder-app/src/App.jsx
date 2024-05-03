@@ -14,7 +14,7 @@ function App() {
           <Route exact path="/" element={<HomePage />} />
           <Route path="/bird/:id" element={<BirdDetailsPage />} />
         </Routes>
-        <Footer />
+        {/* <Footer /> */}
       </BrowserRouter>
     </>
   );
