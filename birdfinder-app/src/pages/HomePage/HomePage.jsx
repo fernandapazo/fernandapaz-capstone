@@ -2,55 +2,42 @@ import { useState, useEffect } from "react";
 import "./HomePage.scss";
 import axios from "axios";
 import SearchBar from "../../components/SearchBar/SearchBar";
+import BirdList from "../../components/BirdList/BirdList";
+import FeaturedContent from "../../components/FeaturedContent/FeaturedContent";
 
-function HomePage({ searchResults }) {
-  const [randomBirds, setRandomBirds] = useState([]);
+function HomePage() {
+  const [searchResults, setSearchResults] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
 
-  useEffect(() => {
-    fetchRandomBirds();
-  }, []);
+  const handleSearch = (searchTerm) => {
+    const requestConfig = {
+      method: "get",
+      url: "https://nuthatch.lastelm.software/v2/birds",
+      headers: {
+        "API-Key": "623eb1a1-a5c4-420f-b85b-23df5c497190",
+      },
+      params: {
+        pageSize: 10,
+        name: searchTerm,
+      },
+    };
+    setSearchTerm(searchTerm);
+    console.log("this should display searchTerm:", searchTerm);
 
-  const fetchRandomBirds = async () => {
-    try {
-      const response = await axios.get(
-        "https://nuthatch.lastelm.software/v2/birds",
-        {
-          headers: {
-            "API-Key": "623eb1a1-a5c4-420f-b85b-23df5c497190",
-          },
-          params: {
-            page: 5,
-            pageSize: 3,
-            hasImg: true,
-          },
-        }
-      );
-      setRandomBirds(response.data.entities);
-    } catch (error) {
-      console.error("Error fetching random birds:", error);
-    }
+    axios(requestConfig)
+      .then((response) => {
+        setSearchResults(response.data.entities);
+
+        console.log(response.data.entities);
+      })
+      .catch((error) => console.error("Error fetching bird data:", error));
   };
-
   return (
     <div className="homepage">
-      <SearchBar />
-      <div className="homepage__container">
-        <h2 className="homepage__title">Featured Content</h2>
-        <ul className="homepage__bird-list">
-          {randomBirds.map((bird, index) => (
-            <li key={index} className="homepage__bird-list-item">
-              <div className="homepage__bird-list-item-wrapper">
-                <h3 className="homepage__bird-list-item-name">{bird.name}</h3>
-                <img
-                  className="homepage__bird-list-item-image"
-                  src={bird.images[0]}
-                  alt={bird.name}
-                />
-              </div>
-            </li>
-          ))}
-        </ul>
-      </div>
+      <SearchBar onSearch={handleSearch} />
+      {/* <SearchBar onSearch={(searchTerm) => setSearchTerm(searchTerm)} /> */}
+      {searchResults.length === 0 && <FeaturedContent />}
+      <BirdList searchResults={searchResults} />
     </div>
   );
 }
