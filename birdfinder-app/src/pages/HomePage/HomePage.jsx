@@ -17,7 +17,7 @@ function HomePage() {
         "API-Key": "623eb1a1-a5c4-420f-b85b-23df5c497190",
       },
       params: {
-        pageSize: 10,
+        pageSize: 25,
         name: searchTerm,
       },
     };
