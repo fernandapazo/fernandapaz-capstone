@@ -1,5 +1,6 @@
 import React from "react";
-import BirdFinderLogo from "../../assets/Images/BirdFinder-logo.png";
+import { Link } from "react-router-dom";
+import BirdFinderLogo from "../../assets/Images/BirdFinderApp-logo.png";
 import userPic from "../../assets/Images/use ph image copy.jpg";
 import "./Header.scss";
 
@@ -7,18 +8,20 @@ function Header() {
   return (
     <header className="header">
       <div className="header__container">
-        <img className="header__logo-img" src={BirdFinderLogo} />
+        <Link to="/" className="header__logo-link">
+          <img className="header__logo-img" src={BirdFinderLogo} />
+        </Link>
         <nav className="header__nav">
           <ul className="header__nav-list">
             <li className="header__nav-item">
-              <a className="header__nav-link" href="#">
+              <Link to="/" className="header__nav-link">
                 Home
-              </a>
+              </Link>
             </li>
             <li className="header__nav-item">
-              <a className="header__nav-link" href="#">
+              <Link to="/" className="header__nav-link">
                 Search
-              </a>
+              </Link>
             </li>
             <div className="header__nav-item-wrapper">
               <li className="header__nav-item">
