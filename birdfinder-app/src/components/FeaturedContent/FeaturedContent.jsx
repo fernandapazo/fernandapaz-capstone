@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 function FeaturedContent() {
   const [randomBirds, setRandomBirds] = useState([]);
@@ -10,7 +11,7 @@ function FeaturedContent() {
 
   const fetchRandomBirds = async () => {
     try {
-      const randomPage = Math.floor(Math.random() * 5) + 1;
+      const randomPage = Math.floor(Math.random() * 7) + 1;
       const response = await axios.get(
         "https://nuthatch.lastelm.software/v2/birds",
         {
@@ -35,14 +36,16 @@ function FeaturedContent() {
       <ul className="homepage__bird-list">
         {randomBirds.map((bird, index) => (
           <li key={index} className="homepage__bird-list-item">
-            <div className="homepage__bird-list-item-wrapper">
-              <h3 className="homepage__bird-list-item-name">{bird.name}</h3>
-              <img
-                className="homepage__bird-list-item-image"
-                src={bird.images[0]}
-                alt={bird.name}
-              />
-            </div>
+            <Link to={`/bird/${bird.id}`}>
+              <div className="homepage__bird-list-item-wrapper">
+                <h3 className="homepage__bird-list-item-name">{bird.name}</h3>
+                <img
+                  className="homepage__bird-list-item-image"
+                  src={bird.images[0]}
+                  alt={bird.name}
+                />
+              </div>
+            </Link>
           </li>
         ))}
       </ul>
