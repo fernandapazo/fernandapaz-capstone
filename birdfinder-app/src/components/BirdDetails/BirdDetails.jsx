@@ -46,7 +46,9 @@ function BirdDetails(recordings) {
       <h1>Bird Details for Bird ID</h1>
       <h2>{bird.name}</h2>
       <p>Scientific Name: {bird.sciName}</p>
-
+      <p>Family Name: {bird.family}</p>
+      <p>Wing Span Max: {bird.wingspanMax}</p>
+      <p>Wing Span Min: {bird.wingspanMin}</p>
       <p className="bird-info__status">Status: {bird.status}</p>
       <p className="bird-info__region">
         Region:
