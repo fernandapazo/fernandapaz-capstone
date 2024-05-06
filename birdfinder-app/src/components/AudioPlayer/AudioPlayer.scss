@@ -1,0 +1,45 @@
+.recordings {
+  //   background: rebeccapurple;
+}
+.recording {
+  background: #4c5c2e;
+  border: blue;
+  border-radius: 20px;
+  text-align: center;
+  margin: 20px auto;
+  width: 90%;
+  height: fit-content;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.525);
+  overflow: hidden;
+  transition: box-shadow 0.3s ease;
+
+  &-audio {
+    background: #4c5c2e;
+    padding: 10px;
+    padding-top: 30px;
+  }
+
+  &-info {
+    background: #4c5c2e;
+    color: #f0f4e8;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+
+    &-date {
+      padding: 10px;
+      font-family: "Cutive";
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: #8fdb00;
+    }
+
+    &-loc {
+      padding: 10px;
+      font-family: "Cutive";
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #f0f4e8;
+    }
+  }
+}
