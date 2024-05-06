@@ -1,0 +1,76 @@
+.bird-details {
+  margin-bottom: 20px;
+  background: #f0f4e8;
+
+  &__title {
+    font-size: 24px;
+    padding: 20px;
+    margin: 0px;
+    text-align: center;
+    color: #4c5c2e;
+    font-size: 3rem;
+    font-family: "Hammersmith";
+  }
+
+  &__info {
+    background: #e1f7b5;
+    padding: 10px;
+    border-radius: 50px;
+    text-align: center;
+    margin: auto;
+    width: 80%;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.42);
+    overflow: hidden;
+    transition: box-shadow 0.3s ease;
+  }
+
+  &__subtitle {
+    font-weight: bold;
+    margin-top: 10px;
+    color: #30332b;
+  }
+
+  &__sci-name {
+    color: #4c5c2e;
+  }
+
+  &__family {
+    color: #4c5c2e;
+  }
+
+  &__wing-span-max,
+  &__wing-span-min {
+    font-style: italic;
+    color: #4c5c2e;
+  }
+
+  .status-green {
+    color: green;
+  }
+
+  .status-yellow {
+    color: rgb(209, 190, 14);
+  }
+
+  .status-red {
+    color: red;
+  }
+
+  &__region {
+    font-style: italic;
+
+    &-item {
+      color: #4c5c2e;
+    }
+  }
+
+  &__images {
+    margin-top: 20px;
+
+    &-item {
+      width: 200px;
+      height: 200px;
+      margin-right: 10px;
+    }
+  }
+}
