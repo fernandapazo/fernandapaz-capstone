@@ -10,6 +10,7 @@ function Header() {
       <div className="header__container">
         <Link to="/" className="header__logo-link">
           <img className="header__logo-img" src={BirdFinderLogo} />
+          <h2 className="header__logo-text">BIRDFINDER</h2>
         </Link>
         <nav className="header__nav">
           <ul className="header__nav-list">
@@ -25,9 +26,9 @@ function Header() {
             </li>
             <div className="header__nav-item-wrapper">
               <li className="header__nav-item">
-                <a href="#">
+                <Link to="/profile" className="header__nav-link">
                   <img className="header__user-icon" src={userPic} />
-                </a>
+                </Link>
               </li>
             </div>
           </ul>
