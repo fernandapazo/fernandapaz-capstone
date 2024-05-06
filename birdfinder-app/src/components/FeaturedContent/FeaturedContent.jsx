@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import "./FeaturedContent.scss";
 
 function FeaturedContent() {
   const [randomBirds, setRandomBirds] = useState([]);
@@ -32,18 +33,23 @@ function FeaturedContent() {
   };
   return (
     <div className="featured-content">
-      <h2 className="homepage__title">Featured Content</h2>
-      <ul className="homepage__bird-list">
+      <h2 className="featured-content__title">Featured Content</h2>
+      <ul className="featured-content__bird-list">
         {randomBirds.map((bird, index) => (
-          <li key={index} className="homepage__bird-list-item">
-            <Link to={`/bird/${bird.id}`}>
-              <div className="homepage__bird-list-item-wrapper">
-                <h3 className="homepage__bird-list-item-name">{bird.name}</h3>
+          <li key={index} className="featured-content__bird-card">
+            <Link
+              to={`/bird/${bird.id}`}
+              className="featured-content__bird-card-link"
+            >
+              <div className="featured-content__bird-card-content">
                 <img
-                  className="homepage__bird-list-item-image"
+                  className="featured-content__bird-card-content-image"
                   src={bird.images[0]}
                   alt={bird.name}
                 />
+                <h3 className="featured-content__bird-card-content-name">
+                  {bird.name}
+                </h3>
               </div>
             </Link>
           </li>
