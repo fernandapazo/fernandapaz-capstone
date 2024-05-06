@@ -26,7 +26,7 @@
 
   &__title {
     margin: 0px;
-    color: #f6b633;
+    color: #e5f8c1;
     font-size: 2.3rem;
     font-weight: 500;
     margin: 10px auto;
@@ -50,7 +50,7 @@
     border-radius: 10px;
     height: 2.5rem;
     padding: 0 15px;
-    box-shadow: 0px 0px 10px #9d983b;
+    box-shadow: 0px 0px 10px #8fdb00;
     display: flex;
     align-items: center;
     margin: 5px;
@@ -71,7 +71,7 @@
   }
 
   &__button {
-    background-color: #f6b633;
+    background-color: #95cc30;
     border: none;
     box-shadow: 0px 0px 10px #102017;
     color: #fff;
@@ -90,12 +90,12 @@
     z-index: 2;
 
     &:hover {
-      background-color: #d39b2d;
+      background-color: #577c12;
       color: #eceff2;
     }
 
     &:active {
-      background-color: #9a701d;
+      background-color: #2c4106;
       color: #f6f4ef;
     }
   }
@@ -138,6 +138,6 @@
   }
 }
 
-* {
-  outline: 1px solid red;
-}
+// * {
+//   outline: 1px solid red;
+// }
