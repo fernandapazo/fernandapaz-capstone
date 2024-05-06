@@ -5,6 +5,7 @@
   &__title {
     font-size: 24px;
     padding: 20px;
+    padding-top: 50px;
     margin: 0px;
     text-align: center;
     color: #4c5c2e;
@@ -18,7 +19,8 @@
     border-radius: 50px;
     text-align: center;
     margin: auto;
-    width: 80%;
+    width: 90%;
+    height: 900px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.42);
     overflow: hidden;
     transition: box-shadow 0.3s ease;
@@ -28,20 +30,34 @@
     font-weight: bold;
     margin-top: 10px;
     color: #30332b;
+    font-family: "Hammersmith";
+    font-weight: 300;
+    font-size: 1.5rem;
   }
 
   &__sci-name {
     color: #4c5c2e;
+    font-family: "Cutive";
+    font-size: 1.3rem;
   }
 
   &__family {
     color: #4c5c2e;
+    font-family: "Cutive";
+    font-size: 1.5rem;
   }
 
   &__wing-span-max,
   &__wing-span-min {
     font-style: italic;
     color: #4c5c2e;
+    font-family: "Cutive";
+    font-size: 1.5rem;
+  }
+
+  &__status {
+    font-family: "Cutive";
+    font-size: 1.5rem;
   }
 
   .status-green {
@@ -58,19 +74,39 @@
 
   &__region {
     font-style: italic;
+    font-family: "Cutive";
+    font-size: 1.3rem;
 
     &-item {
-      color: #4c5c2e;
+      color: #5c7a23;
     }
   }
 
   &__images {
     margin-top: 20px;
+    padding-left: 10px;
+    padding-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 
     &-item {
       width: 200px;
       height: 200px;
       margin-right: 10px;
+      border-radius: 15px;
+    }
+  }
+
+  &__recordings {
+    padding: 20px;
+    margin-top: 50px;
+
+    &-title {
+      font-family: "Hammersmith";
+      text-align: center;
+      color: #4c5c2e;
+      font-size: 3rem;
     }
   }
 }
