@@ -2,8 +2,9 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import AudioPlayer from "../AudioPlayer/AudioPlayer";
+import FavoriteButton from "../FavoriteButton/FavoriteButton";
 
-function BirdDetails(recordings) {
+function BirdDetails() {
   const { id } = useParams();
   const [bird, setBird] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -45,6 +46,7 @@ function BirdDetails(recordings) {
     <div>
       <h1>Bird Details for Bird ID</h1>
       <h2>{bird.name}</h2>
+      <FavoriteButton id={id} birdName={bird.name} />
       <p>Scientific Name: {bird.sciName}</p>
       <p>Family Name: {bird.family}</p>
       <p>Wing Span Max: {bird.wingspanMax}</p>
@@ -71,7 +73,7 @@ function BirdDetails(recordings) {
       </div>
       <div>
         <h2>Recordings</h2>
-        <AudioPlayer recordings={recordings} />
+        <AudioPlayer />
       </div>
     </div>
   );
