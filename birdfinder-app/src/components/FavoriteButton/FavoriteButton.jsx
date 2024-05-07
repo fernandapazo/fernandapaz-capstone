@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import "./FavoriteButton.scss";
+import heartIcon from "../../assets/Icons/favorite_heart.svg";
 
 function FavoriteButton({ id, birdName }) {
   const [isFavorite, setIsFavorite] = useState(false);
@@ -30,9 +32,12 @@ function FavoriteButton({ id, birdName }) {
   };
 
   return (
-    <button onClick={toggleFavorite}>
-      {isFavorite ? "Remove from Favorites" : "Add to Favorites"}
-    </button>
+    <div className="favorite">
+      <button className="favorite-button" onClick={toggleFavorite}>
+        <img src={heartIcon} alt="Heart" className="heart-icon" />
+        {isFavorite ? "Remove from Favorites" : "Add to Favorites"}
+      </button>
+    </div>
   );
 }
 
