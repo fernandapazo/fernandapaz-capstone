@@ -16,7 +16,7 @@ function App() {
           <Route path="/bird/:id" element={<BirdDetailsPage />} />
           <Route path="/profile" element={<Profile />} />
         </Routes>
-        {/* <Footer /> */}
+        <Footer />
       </BrowserRouter>
     </>
   );
