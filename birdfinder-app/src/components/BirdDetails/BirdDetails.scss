@@ -47,7 +47,13 @@
     font-size: 1.5rem;
   }
 
-  &__wing-span-max,
+  &__wing-span-max {
+    font-style: italic;
+    color: #4c5c2e;
+    font-family: "Cutive";
+    font-size: 1.5rem;
+  }
+
   &__wing-span-min {
     font-style: italic;
     color: #4c5c2e;

@@ -66,9 +66,9 @@ function BirdDetails() {
         <h3 className="bird-details__subtitle">Family Name</h3>
         <p className="bird-details__family"> {bird.family}</p>
         <h3 className="bird-details__subtitle">Wing Span Max</h3>
-        <p className="bird-details__wing-span-max">{bird.wingspanMax}</p>
+        <p className="bird-details__wing-span-max">{bird.lengthMax}</p>
         <h3 className="bird-details__subtitle">Wing Span Min</h3>
-        <p className="bird-details__wing-span-min"> {bird.wingspanMin}</p>
+        <p className="bird-details__wing-span-min"> {bird.lengthMin}</p>
         <h3 className="bird-details__subtitle">Status</h3>
         <p className={`bird-details__status ${getStatusColor(bird.status)}`}>
           {" "}
