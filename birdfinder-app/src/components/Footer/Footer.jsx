@@ -11,7 +11,14 @@ function Footer() {
         <a className="footer__link" href="https://nuthatch.lastelm.software/">
           <h3 className="footer__title">Nuthatch API </h3>
         </a>
-        <p className="footer__contact">lastelmsoft@gmail.com</p>
+        <p className="footer__contact">
+          <a
+            className="footer__contact-link"
+            href="mailto:lastelmsoft@gmail.com"
+          >
+            lastelmsoft@gmail.com
+          </a>
+        </p>
       </div>
       <div className="footer__section">
         <h3 className="footer__title">Social Media</h3>

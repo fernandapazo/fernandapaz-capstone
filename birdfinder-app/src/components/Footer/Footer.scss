@@ -1,14 +1,13 @@
 .footer {
-  background-color: #d39b2d;
-  color: #fff;
+  background-color: #2d3322;
+  color: #f0f4e8;
   padding: 0 50px 5px 0px;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  position: fixed;
   bottom: 0;
   width: 100%;
-  height: 80px;
+  box-sizing: border-box;
 
   &__section {
     flex: 1 1 50%;
@@ -20,7 +19,7 @@
     text-decoration: none;
 
     &:hover {
-      text-decoration: underline;
+      text-decoration: underline 5px;
       color: #2b573d;
     }
   }
@@ -30,20 +29,30 @@
     font-weight: 400;
     font-size: 1.2rem;
     margin-bottom: 10px;
-    color: #2b573d;
+    color: #f0f4e8;
+    padding-top: 20px;
+    padding-left: 50px;
   }
 
   &__contact {
     font-family: "Hammersmith";
     font-size: 0.9rem;
     margin-bottom: 10px;
-    color: #2b573d;
+    color: #f0f4e8;
+    padding-left: 50px;
+    padding-bottom: 20px;
+  }
+
+  &__contact-link {
+    text-decoration: none;
+    color: #f0f4e8;
   }
 
   &__social-list {
     list-style: none;
-    padding: 0;
+    padding: 0px;
     margin: 0;
+    padding-left: 50px;
   }
 
   &__social-item {
@@ -59,12 +68,12 @@
 
     &-img {
       width: 25px;
-      height: 30px;
+      height: 25px;
 
       &:hover {
         transition: 0.3s ease;
-        width: 35px;
-        height: 40px;
+        width: 30px;
+        height: 30px;
       }
     }
   }
