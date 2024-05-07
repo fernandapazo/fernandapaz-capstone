@@ -12,7 +12,7 @@ function FeaturedContent() {
 
   const fetchRandomBirds = async () => {
     try {
-      const randomPage = Math.floor(Math.random() * 7) + 1;
+      const randomPage = Math.floor(Math.random() * 8) + 1;
       const response = await axios.get(
         "https://nuthatch.lastelm.software/v2/birds",
         {
@@ -33,7 +33,7 @@ function FeaturedContent() {
   };
   return (
     <div className="featured-content">
-      <h2 className="featured-content__title">Featured Content</h2>
+      <h2 className="featured-content__title">Avian Spotlight</h2>
       <ul className="featured-content__bird-list">
         {randomBirds.map((bird, index) => (
           <li key={index} className="featured-content__bird-card">
