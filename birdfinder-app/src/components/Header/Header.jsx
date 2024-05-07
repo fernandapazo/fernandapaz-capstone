@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import BirdFinderLogo from "../../assets/Images/BirdFinderApp-logo.png";
+import BirdFinderLogo from "../../assets/Images/Logo.svg";
 import userPic from "../../assets/Images/use ph image copy.jpg";
 import "./Header.scss";
 
